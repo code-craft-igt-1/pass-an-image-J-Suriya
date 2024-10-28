@@ -1,5 +1,7 @@
-#pragma once
-#include <cstdint>
+#ifndef BRIGHTENER_H
+#define BRIGHTENER_H
+
+#include <vector>
 
 struct Image {
 	int rows;
@@ -8,10 +10,12 @@ struct Image {
 };
 
 class ImageBrightener {
-private:
-	Image m_inputImage;
+
 public:
 	ImageBrightener(Image& inputImage);
 	int BrightenWholeImage();
-	Image GetImage();
+private:
+	Image& m_inputImage;
 };
+
+#endif // BRIGHTENER_H
